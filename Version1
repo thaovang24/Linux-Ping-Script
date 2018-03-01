@@ -1,1 +1,10 @@
 
+#Prompt user for input ip address or #host name
+
+echo Please type in the ip or hostname...
+
+read varname
+
+echo Hostname or IP is $varname
+
+ping $varname
