@@ -6,6 +6,6 @@ echo Please type in the ip or hostname...
 
 read varname
 
-echo Hostname or IP is $varname
+echo 'Hostname or IP is: $varname"
 
 ping $varname
