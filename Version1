@@ -1,11 +1,14 @@
 #!/bin/bash
 
-#Prompt user for input ip address or #host name
+#Prompt user for input ip address or hostname. 
+#The finish is to confirmed that it pings and pull the mac address from the remote workstation.
 
-echo Please type in the ip or hostname...
+echo "Please type in the ip or hostname"
 
 read varname
 
 echo Hostname or IP is $varname
 
 ping $varname
+
+
