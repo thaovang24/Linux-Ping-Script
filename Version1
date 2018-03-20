@@ -1,22 +1,17 @@
 #!/bin/bash
-
-#Prompt user for input ip address or hostname. 
-#The finish is to confirmed that it pings and pull the mac address from the remote workstation.
+# In order use this script and pull ip address from the network it will use the tool nmap and scan the network
+# subnet and save it to a text file call Network.txt
 #
 #
+# This will install the the command line program called
+# nmap for debian distro
+apt-get install nmap
+#
+#
+#
+echo "Enter the network id"
+read NetworkID
+nmap -sn $NetworkID > /home/users/lwm/Desktop/network/Network.txt
 
-echo "Please type in the ip or hostname"
-
-read varname
-
-echo Hostname or IP is $varname
-
-ping $varname
-
-echo "retrieving mac address"
-
-arp -a $varname
-
-fi
 
 
