@@ -36,6 +36,14 @@ nmap -sn $NetworkID -oG NetworkAddress
 
 # use command awk to locate ip address and save it to text file IPAddress and append for each new ones
 awk '/Host/ {print$2}' < NetworkAddress >> IpAddress
+#
+#
+# command etherwake will need user to input mac address in this format ex:(17:20:12:14:12:12)
+echo "Please enter mac address of the host:"
+read mac
+etherwake $mac 
+#
+
 
 
 
