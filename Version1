@@ -27,9 +27,10 @@ apt-get install nmap
 #
 # Prompt user to input network id
 echo "Enter the network ip address"
-
 read NetworkID
-
+#
+#
+#
 # use nmap to scan network address (-sn ) for all host located on that network and output to a text file (-oG )
 # called NetworkAddress.txt
 nmap -sn $NetworkID -oG NetworkAddress
