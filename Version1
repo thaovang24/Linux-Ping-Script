@@ -9,9 +9,14 @@ apt-get install nmap
 #
 #
 #
-echo "Enter the network id"
+# Prompt user to input network id
+echo "Enter the network ip address"
+
 read NetworkID
+
+# use nmap to scan network address (-sn ) for all host located on that network and output to a text file (-oG )
+# called NetworkAddress.txt
 nmap -sn $NetworkID -oG NetworkAddress
 
-
-
+# use command awk to locate ip address and save it to text file IpAddress and append for each new ones
+awk '/Host/ {print$2}' < NetworkAddress >> IpAddress
