@@ -1,6 +1,22 @@
 #!/bin/bash
+#
+# Program is compatible with debin linux kernal version 1 SMP Debian 4.9.65-3+deb9u1 (2017-12-23) or newer.
 # In order use this script and pull ip address from the network it will use the tool nmap and scan the network
-# subnet and save it to a text file call Network.txt
+# subnet and save it to a text file call NetworkAddress
+# It will also install the program called etherwake used to wake poweroff workstation. PC must be configured in
+# Bios for Wake On Lan (WOL)
+# 
+#
+#
+#
+# Creator: Thao Vang
+# Date:  03/20/2018
+# Course: Linux Midterm
+#
+#
+#
+# This will install the program called etherwake
+apt-get install etherwake
 #
 #
 # This will install the the command line program called
@@ -18,5 +34,9 @@ read NetworkID
 # called NetworkAddress.txt
 nmap -sn $NetworkID -oG NetworkAddress
 
-# use command awk to locate ip address and save it to text file IpAddress and append for each new ones
+# use command awk to locate ip address and save it to text file IPAddress and append for each new ones
 awk '/Host/ {print$2}' < NetworkAddress >> IpAddress
+
+
+
+
