@@ -11,7 +11,7 @@ apt-get install nmap
 #
 echo "Enter the network id"
 read NetworkID
-nmap -sn $NetworkID > /home/users/lwm/Desktop/network/Network.txt
+nmap -sn $NetworkID -oG NetworkAddress
 
 
 
