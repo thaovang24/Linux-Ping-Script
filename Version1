@@ -34,7 +34,8 @@ read NetworkID
 # use nmap to scan network address (-sn ) for all host located on that network and output to a text file (-oG )
 # called NetworkAddress.txt
 nmap -sn $NetworkID -oG NetworkAddress
-
+#nmap -n -sP 10.0.3.0/24 | awk '/Nmap scan report/{printf $5;printf " ";getline;getline;print $3;}'  #is another command to try
+#
 # use command awk to locate ip address and save it to text file IPAddress and append for each new ones
 awk '/Host/ {print$2}' < NetworkAddress >> IpAddress
 #
